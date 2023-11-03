@@ -1,0 +1,6 @@
+Collumn Name,Type,Not Null,Name Field,Allow values
+COD_SEG_CVTP,"NUMBER(6,0)",PK,Código de Segmento CVTP,
+DESC_SEGUIMENTO,VARCHAR2(24),YES,Descrição do Segmento,
+DTH_CAD_REG,DATE,YES,Data e Hora de Cadastro do Registro,
+COD_REG_USUAR,"NUMBER(6,0)",YES,Código de Registro de Usuário,
+COD_REG_EMPRG,"NUMBER(3,0)",YES,Código de Registro de Empregado,

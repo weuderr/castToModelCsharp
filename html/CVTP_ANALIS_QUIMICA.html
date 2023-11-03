@@ -1,0 +1,50 @@
+<form id="CvtpAnalisQuimica" name="CvtpAnalisQuimica" ng-init="vm.configurarPagina()">
+    <div class="row">
+        <br />
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código do Elemento Químico:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_elem_quimico" name="cod_elem_quimico" required data-bind="value: COD_ELEM_QUIMICO" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Número Sequencial CVTP:</label>
+<input type="number" class="form-control input-sm numeric-field" id="nun_seq_cvtp" name="nun_seq_cvtp" data-bind="value: NUN_SEQ_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código da Unidade do Elemento:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_unid_elem" name="cod_unid_elem" maxlength="10" required data-bind="value: COD_UNID_ELEM" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Número do Valor Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="num_vlr_min" name="num_vlr_min" data-bind="value: NUM_VLR_MIN" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Número do Valor Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="num_vlr_max" name="num_vlr_max" data-bind="value: NUM_VLR_MAX" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data e Hora de Cadastro do Registro:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_cad_reg" name="dth_cad_reg" required data-bind="value: DTH_CAD_REG" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código de Registro de Usuário:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_reg_usuar" name="cod_reg_usuar" required data-bind="value: COD_REG_USUAR" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código de Registro de Empregado:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_reg_emprg" name="cod_reg_emprg" required data-bind="value: COD_REG_EMPRG" />                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Enviar" />
+</form>

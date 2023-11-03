@@ -1,0 +1,96 @@
+Collumn Name,Type,Not Null,Name Field,Allow values
+NUN_SEQ_CVTP,"NUMBER(6,0)",PK,Sequência,
+COD_CLIENTE,"NUMBER(7,0)",FK:PR_CLIENTE,Cliente,
+DESC_TOLER_PROD,VARCHAR2(1),,Tolerância do Produto,"A,P,E"
+DESC_PADRONIZ_ESP,VARCHAR2(1),,Padronização Específica,"C,N,P"
+POS_BOB_TIRA,VARCHAR2(1),,Posição da Bobina/Tira,"H,V"
+COD_MERC_CVTP,VARCHAR2(2),,Mercado,"MI,ME"
+DESC_OUTRO_SEG,VARCHAR2(24),,Descrição de Outro Segmento,
+COD_SITUA_CVTP,VARCHAR2(2),,Situação,"NV,RB,PR,RC,CC,CA"
+COD_DIMENS_PROD,VARCHAR2(1),,Dimensão do Produto,"P,E"
+COD_ENSAIO_LABOR,VARCHAR2(1),,Ensaio de Laboratório,"P,E"
+COD_TIPO_PERDA,VARCHAR2(1),,Tipo de Perda,"P,E"
+DESC_COMP_QUIMICA,VARCHAR2(1),,Composição Química,"P,E"
+DIAM_INTERN_BOB,VARCHAR2(1),,Diâmetro Interno da Bobina,"P,E"
+COD_NORM_CLIENTE,VARCHAR2(1),,Norma do Cliente,"S,N"
+ACO_INTERN_CVTP,VARCHAR2(24),,Aço Interno,
+COD_ACAB_REVEST,VARCHAR2(2),,Acabamento e Revestimento,"P,E"
+COD_AREA_APLIC,VARCHAR2(1),,Área de Aplicação,
+COD_ARQUI_ANEXO,CLOB,,Anexo CVTP,
+COD_ARQUI_ANEXORVTP,CLOB,,Anexo RVTP,
+COD_CVTP_PAI,"NUMBER(6,0)",,Código Pai CVT,
+COD_ENVIO_CUSTO,VARCHAR2(1),,Custo de Envio,"S,N"
+COD_IDENT_ACOEX,VARCHAR2(5),,Identificação Aço Externo,
+COD_IDENT_FMACO,VARCHAR2(5),,Identificação FM Aço,
+COD_LINHA_PRODT,VARCHAR2(1),,Linha de Produto,
+COD_REG_EMPRG,"NUMBER(3,0)",,Empregado Registrado,
+COD_REG_USUAR,"NUMBER(6,0)",,Usuário Registrado,
+COD_REVIS_CVTP,"NUMBER(4,0)",,Revisão,
+COD_SEG_CVTP,VARCHAR2(24),,Segmento,
+COD_SETOR_AUTOMOT,VARCHAR2(1),,Setor Automotivo,"S,N"
+COD_SITUA_RVTP,VARCHAR2(1),,Código Situação,
+COMPLEX_INDUST_RVTP,VARCHAR2(1),,Complexidade Industrial,
+DESC_ANALIS_RISCORVTP,VARCHAR2(512),,Descrição Análise Risco,
+DESC_APLIC_CVTP,VARCHAR2(24),,Descrição da Aplicação,"I,A,C"
+DESC_COMPLEX_CVTP,VARCHAR2(12),,Descrição Complexa,"B,M,A"
+DESC_CONDIC_FORNRVTP,VARCHAR2(512),,Descrição Condição Fornecedor,
+DESC_GRUPO_CVTP,VARCHAR2(3),,Descrição do Grupo,
+DESC_IMPACT_RELEVRVTP,VARCHAR2(512),,Descrição Impacto Relevante,
+DESC_INFORMAC_FORN,VARCHAR2(1024),,Descrição Informação Fornecida,
+DESC_MOTIV_CONSULTA,VARCHAR2(24),,Motivo da Consulta,
+DESC_NORMA_CLIENTE,VARCHAR2(1040),,Descrição da Norma do Cliente,
+DESC_QTD_FORNEC,"NUMBER(4,0)",,Quantidade Fornecida,
+DESC_RECUSA_CVTP,VARCHAR2(1024),,Descrição de Recusa,
+DTH_ANALIS_RVTP,DATE,,Data de Análise RVTP,
+DTH_CADAST_CVTP,DATE,,Data de Cadastro,
+DTH_CADAST_RVTP,DATE,,Data de Cadastro RVTP,
+DTH_ENVIO_RVTP,DATE,,Data Hora Envio,
+DTH_RECEB_CVTP,DATE,,Data de Recebimento,
+DTH_RECUSA_CVTP,DATE,,Data de Recusa,
+FLUXO_ROTIN_PRODRVTP,VARCHAR2(256),,Fluxo Rotina Produto,
+IDC_CUSTO_PRVTP,VARCHAR2(1),,Identificador Custo Privado,
+IDC_ENVIO_RVTP,VARCHAR2(1),,Envio Rotativo,
+IDC_FLAG_RVTP,VARCHAR2(1),,Flag Rotativo,
+IDC_FLUXO_ROTRVTP,VARCHAR2(1),,Fluxo Rotativo Código,
+IDC_TIPO_FORNRVTP,VARCHAR2(1),,Tipo Fornecedor Privado,
+IMPACT_RELEV_PROCERVTP,VARCHAR2(1),,Impacto Relevante Processo,
+LIMIT_ESCDOIS_MAX,"NUMBER(6,3)",,Limite ESC2 Máximo,
+LIMIT_ESCDOIS_MIN,"NUMBER(6,3)",,Limite ESC2 Mínimo,
+LIMIT_ESCDOIS_UNID,VARCHAR2(10),,Unidade de Limite ESC2,
+LIMIT_ESCUM_MAX,"NUMBER(6,3)",,Limite Escuma Máximo,
+LIMIT_ESCUM_MIN,"NUMBER(6,3)",,Limite Escuma Mínimo,
+LIMIT_ESCUM_UNID,VARCHAR2(10),,Unidade de Limite de Escuma,
+LIMIT_RES_MAX,"NUMBER(6,3)",,Limite Residual Máximo,
+LIMIT_RES_MIN,"NUMBER(6,3)",,Limite Residual Mínimo,
+LIMIT_RES_UNID,VARCHAR2(10),,Unidade de Limite Residual,
+NORMA_REFER_CVTP,VARCHAR2(1040),,Norma de Referência,
+PES_LIQUI_PROD,"NUMBER(5,0)",,Peso Líquido do Produto,
+PRODUT_SAP_SIMRVTP,VARCHAR2(124),,Produto SAP Simulador,
+QTD_CONJ_DIMENS,"NUMBER(4,0)",,Quantidade de Conjunto de Dimensões,
+TAM_GRAO_MAX,"NUMBER(6,3)",,Tamanho de Grão Máximo,
+TAM_GRAO_MIN,"NUMBER(6,3)",,Tamanho de Grão Mínimo,
+TAM_GRAO_UNID,VARCHAR2(10),,Unidade de Tamanho de Grão,
+VALOR_WKG,NUMBER(6),,Valor WKG,
+VLR_DIAM_ESPEC,"NUMBER(5,0)",,Valor do Diâmetro Especial,
+VLR_DUREZA_MAX,"NUMBER(6,3)",,Valor de Dureza Máxima,
+VLR_DUREZA_MIN,"NUMBER(6,3)",,Valor de Dureza Mínima,
+VLR_IMPACTO_MAX,"NUMBER(6,3)",,Valor de Impacto Máximo,
+VLR_IMPACTO_MIN,"NUMBER(6,3)",,Valor de Impacto Mínimo,
+VLR_IMPACTO_UNID,VARCHAR2(10),,Unidade de Valor de Impacto,
+VLR_INDUC,VARCHAR2(10),,Valor Indução,
+VLR_OUTRO_MAX,"NUMBER(6,3)",,Valor Outro Máximo,
+VLR_OUTRO_MIN,"NUMBER(6,3)",,Valor Outro Mínimo,
+VLR_OUTRO_UNID,VARCHAR2(10),,Unidade de Valor Outro,
+VLR_OUTROS,VARCHAR2(124),,Valor Outros,
+VLR_OXALICO_MAX,"NUMBER(6,3)",,Valor Oxálico Máximo,
+VLR_OXALICO_MIN,"NUMBER(6,3)",,Valor Oxálico Mínimo,
+VLR_OXALICO_UNID,VARCHAR2(10),,Unidade de Valor Oxálico,
+VLR_UNID_DUREZA,VARCHAR2(1),,Unidade de Dureza,
+VRL_ALONG_MAX,"NUMBER(6,3)",,Valor Alongamento Máximo,
+VRL_ALONG_MIN,"NUMBER(6,3)",,Valor Alongamento Mínimo,
+VRL_ALONG_UNID,VARCHAR2(10),,Unidade de Valor de Alongamento,
+VRL_FREQUENCIA,VARCHAR2(10),,Frequência,
+ESP_TOLER_CENTRADA,"VARCHAR2(1)",,Espessura Tolerância Centrada,"0,1"
+ESP_TOLER_NEGATIVA,"VARCHAR2(1)",,Espessura Tolerância Negativa,"0,1"
+ESP_TOLER_POSITIVA,"VARCHAR2(1)",,Espessura Tolerância Positiva,"0,1"
+TIPO_PESO_BOB,"VARCHAR2(1)",,Tipo Peso Bobina,

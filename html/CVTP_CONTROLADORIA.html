@@ -1,0 +1,79 @@
+<form id="CvtpControladoria" name="CvtpControladoria" ng-init="vm.configurarPagina()">
+    <div class="row">
+        <br />
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código de Análise de Controle:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_analis_control" name="cod_analis_control" required data-bind="value: COD_ANALIS_CONTROL" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Número Sequencial CVTP:</label>
+<input type="number" class="form-control input-sm numeric-field" id="nun_seq_cvtp" name="nun_seq_cvtp" data-bind="value: NUN_SEQ_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código de Revisão CVTP:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_revis_cvtp" name="cod_revis_cvtp" data-bind="value: COD_REVIS_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código de Registro de Usuário:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_reg_usuar" name="cod_reg_usuar" data-bind="value: COD_REG_USUAR" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código de Registro de Empregado:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_reg_emprg" name="cod_reg_emprg" data-bind="value: COD_REG_EMPRG" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código da Sigla da Lotação:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_sigla_lotac" name="cod_sigla_lotac" maxlength="5" data-bind="value: COD_SIGLA_LOTAC" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>E-mail de Análise de Custo:</label>
+<input type="text" class="form-control input-sm text-field" id="e-mail_analis_custo" name="e-mail_analis_custo" maxlength="48" data-bind="value: E-MAIL_ANALIS_CUSTO" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Produto SAP Similar:</label>
+<input type="text" class="form-control input-sm text-field" id="produt_sap_similar" name="produt_sap_similar" maxlength="48" data-bind="value: PRODUT_SAP_SIMILAR" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Ano e Mês de Referência:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="ano_mes_refer" name="ano_mes_refer" data-bind="value: ANO_MES_REFER" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Quantidade de Aço para Análise de Custo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="qtde_aço_analcusto" name="qtde_aço_analcusto" data-bind="value: QTDE_AÇO_ANALCUSTO" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Status da Análise de Custo:</label>
+<input type="text" class="form-control input-sm text-field" id="status_analis_custo" name="status_analis_custo" maxlength="4" data-bind="value: STATUS_ANALIS_CUSTO" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data e Hora de Início da Análise de Custo:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_inic_analcusto" name="dth_inic_analcusto" data-bind="value: DTH_INIC_ANALCUSTO" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data e Hora de Envio da Análise de Custo:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_envio_analcusto" name="dth_envio_analcusto" data-bind="value: DTH_ENVIO_ANALCUSTO" />                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Enviar" />
+</form>

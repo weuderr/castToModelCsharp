@@ -1,0 +1,619 @@
+<form id="CvtpProduto" name="CvtpProduto" ng-init="vm.configurarPagina()">
+    <div class="row">
+        <br />
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Sequência:</label>
+<input type="number" class="form-control input-sm numeric-field" id="nun_seq_cvtp" name="nun_seq_cvtp" required data-bind="value: NUN_SEQ_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Cliente:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_cliente" name="cod_cliente" data-bind="value: COD_CLIENTE" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Tolerância do Produto:</label>
+<select class="form-control input-sm text-field" id="desc_toler_prod" name="desc_toler_prod" data-bind="value: DESC_TOLER_PROD">
+<option value="A">A</option>
+<option value="P">P</option>
+<option value="E">E</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Padronização Específica:</label>
+<select class="form-control input-sm text-field" id="desc_padroniz_esp" name="desc_padroniz_esp" data-bind="value: DESC_PADRONIZ_ESP">
+<option value="C">C</option>
+<option value="N">N</option>
+<option value="P">P</option>
+</select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Posição da Bobina/Tira:</label>
+<select class="form-control input-sm text-field" id="pos_bob_tira" name="pos_bob_tira" data-bind="value: POS_BOB_TIRA">
+<option value="H">H</option>
+<option value="V">V</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Mercado:</label>
+<select class="form-control input-sm text-field" id="cod_merc_cvtp" name="cod_merc_cvtp" data-bind="value: COD_MERC_CVTP">
+<option value="MI">MI</option>
+<option value="ME">ME</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição de Outro Segmento:</label>
+<input type="text" class="form-control input-sm text-field" id="desc_outro_seg" name="desc_outro_seg" maxlength="24" data-bind="value: DESC_OUTRO_SEG" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Situação:</label>
+<select class="form-control input-sm text-field" id="cod_situa_cvtp" name="cod_situa_cvtp" data-bind="value: COD_SITUA_CVTP">
+<option value="NV">NV</option>
+<option value="RB">RB</option>
+<option value="PR">PR</option>
+<option value="RC">RC</option>
+<option value="CC">CC</option>
+<option value="CA">CA</option>
+</select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Dimensão do Produto:</label>
+<div class="form-col input-sm text-field" id="cod_dimens_prod">
+<input type="radio" class="form-control-radio" id="cod_dimens_prodP" name="cod_dimens_prod" value="P" data-bind="checked: COD_DIMENS_PROD" />
+<label for="cod_dimens_prodP">P</label>
+<input type="radio" class="form-control-radio" id="cod_dimens_prodE" name="cod_dimens_prod" value="E" data-bind="checked: COD_DIMENS_PROD" />
+<label for="cod_dimens_prodE">E</label>
+</div>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Ensaio de Laboratório:</label>
+<div class="form-col input-sm text-field" id="cod_ensaio_labor">
+<input type="radio" class="form-control-radio" id="cod_ensaio_laborP" name="cod_ensaio_labor" value="P" data-bind="checked: COD_ENSAIO_LABOR" />
+<label for="cod_ensaio_laborP">P</label>
+<input type="radio" class="form-control-radio" id="cod_ensaio_laborE" name="cod_ensaio_labor" value="E" data-bind="checked: COD_ENSAIO_LABOR" />
+<label for="cod_ensaio_laborE">E</label>
+</div>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Tipo de Perda:</label>
+<div class="form-col input-sm text-field" id="cod_tipo_perda">
+<input type="radio" class="form-control-radio" id="cod_tipo_perdaP" name="cod_tipo_perda" value="P" data-bind="checked: COD_TIPO_PERDA" />
+<label for="cod_tipo_perdaP">P</label>
+<input type="radio" class="form-control-radio" id="cod_tipo_perdaE" name="cod_tipo_perda" value="E" data-bind="checked: COD_TIPO_PERDA" />
+<label for="cod_tipo_perdaE">E</label>
+</div>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Composição Química:</label>
+<div class="form-col input-sm text-field" id="desc_comp_quimica">
+<input type="radio" class="form-control-radio" id="desc_comp_quimicaP" name="desc_comp_quimica" value="P" data-bind="checked: DESC_COMP_QUIMICA" />
+<label for="desc_comp_quimicaP">P</label>
+<input type="radio" class="form-control-radio" id="desc_comp_quimicaE" name="desc_comp_quimica" value="E" data-bind="checked: DESC_COMP_QUIMICA" />
+<label for="desc_comp_quimicaE">E</label>
+</div>                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Diâmetro Interno da Bobina:</label>
+<div class="form-col input-sm text-field" id="diam_intern_bob">
+<input type="radio" class="form-control-radio" id="diam_intern_bobP" name="diam_intern_bob" value="P" data-bind="checked: DIAM_INTERN_BOB" />
+<label for="diam_intern_bobP">P</label>
+<input type="radio" class="form-control-radio" id="diam_intern_bobE" name="diam_intern_bob" value="E" data-bind="checked: DIAM_INTERN_BOB" />
+<label for="diam_intern_bobE">E</label>
+</div>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Norma do Cliente:</label>
+<select class="form-control input-sm text-field" id="cod_norm_cliente" name="cod_norm_cliente" data-bind="value: COD_NORM_CLIENTE">
+<option value="S">S</option>
+<option value="N">N</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Aço Interno:</label>
+<input type="text" class="form-control input-sm text-field" id="aco_intern_cvtp" name="aco_intern_cvtp" maxlength="24" data-bind="value: ACO_INTERN_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Acabamento e Revestimento:</label>
+<div class="form-col input-sm text-field" id="cod_acab_revest">
+<input type="radio" class="form-control-radio" id="cod_acab_revestP" name="cod_acab_revest" value="P" data-bind="checked: COD_ACAB_REVEST" />
+<label for="cod_acab_revestP">P</label>
+<input type="radio" class="form-control-radio" id="cod_acab_revestE" name="cod_acab_revest" value="E" data-bind="checked: COD_ACAB_REVEST" />
+<label for="cod_acab_revestE">E</label>
+</div>                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Área de Aplicação:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_area_aplic" name="cod_area_aplic" maxlength="1" data-bind="value: COD_AREA_APLIC" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Anexo CVTP:</label>
+<input type="text" class="form-control " id="cod_arqui_anexo" name="cod_arqui_anexo" data-bind="value: COD_ARQUI_ANEXO" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Anexo RVTP:</label>
+<input type="text" class="form-control " id="cod_arqui_anexorvtp" name="cod_arqui_anexorvtp" data-bind="value: COD_ARQUI_ANEXORVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código Pai CVT:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_cvtp_pai" name="cod_cvtp_pai" data-bind="value: COD_CVTP_PAI" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Custo de Envio:</label>
+<select class="form-control input-sm text-field" id="cod_envio_custo" name="cod_envio_custo" data-bind="value: COD_ENVIO_CUSTO">
+<option value="S">S</option>
+<option value="N">N</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Identificação Aço Externo:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_ident_acoex" name="cod_ident_acoex" maxlength="5" data-bind="value: COD_IDENT_ACOEX" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Identificação FM Aço:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_ident_fmaco" name="cod_ident_fmaco" maxlength="5" data-bind="value: COD_IDENT_FMACO" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Linha de Produto:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_linha_prodt" name="cod_linha_prodt" maxlength="1" data-bind="value: COD_LINHA_PRODT" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Empregado Registrado:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_reg_emprg" name="cod_reg_emprg" data-bind="value: COD_REG_EMPRG" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Usuário Registrado:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_reg_usuar" name="cod_reg_usuar" data-bind="value: COD_REG_USUAR" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Revisão:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_revis_cvtp" name="cod_revis_cvtp" data-bind="value: COD_REVIS_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Segmento:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_seg_cvtp" name="cod_seg_cvtp" maxlength="24" data-bind="value: COD_SEG_CVTP" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Setor Automotivo:</label>
+<select class="form-control input-sm text-field" id="cod_setor_automot" name="cod_setor_automot" data-bind="value: COD_SETOR_AUTOMOT">
+<option value="S">S</option>
+<option value="N">N</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código Situação:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_situa_rvtp" name="cod_situa_rvtp" maxlength="1" data-bind="value: COD_SITUA_RVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Complexidade Industrial:</label>
+<input type="text" class="form-control input-sm text-field" id="complex_indust_rvtp" name="complex_indust_rvtp" maxlength="1" data-bind="value: COMPLEX_INDUST_RVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição Análise Risco:</label>
+<textarea class="form-control input-sm text-field" id="desc_analis_riscorvtp" name="desc_analis_riscorvtp" rows="3" data-bind="value: DESC_ANALIS_RISCORVTP"></textarea>                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição da Aplicação:</label>
+<select class="form-control input-sm text-field" id="desc_aplic_cvtp" name="desc_aplic_cvtp" data-bind="value: DESC_APLIC_CVTP">
+<option value="I">I</option>
+<option value="A">A</option>
+<option value="C">C</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição Complexa:</label>
+<select class="form-control input-sm text-field" id="desc_complex_cvtp" name="desc_complex_cvtp" data-bind="value: DESC_COMPLEX_CVTP">
+<option value="B">B</option>
+<option value="M">M</option>
+<option value="A">A</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição Condição Fornecedor:</label>
+<textarea class="form-control input-sm text-field" id="desc_condic_fornrvtp" name="desc_condic_fornrvtp" rows="3" data-bind="value: DESC_CONDIC_FORNRVTP"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição do Grupo:</label>
+<input type="text" class="form-control input-sm text-field" id="desc_grupo_cvtp" name="desc_grupo_cvtp" maxlength="3" data-bind="value: DESC_GRUPO_CVTP" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição Impacto Relevante:</label>
+<textarea class="form-control input-sm text-field" id="desc_impact_relevrvtp" name="desc_impact_relevrvtp" rows="3" data-bind="value: DESC_IMPACT_RELEVRVTP"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição Informação Fornecida:</label>
+<textarea class="form-control input-sm text-field" id="desc_informac_forn" name="desc_informac_forn" rows="5" data-bind="value: DESC_INFORMAC_FORN"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Motivo da Consulta:</label>
+<input type="text" class="form-control input-sm text-field" id="desc_motiv_consulta" name="desc_motiv_consulta" maxlength="24" data-bind="value: DESC_MOTIV_CONSULTA" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição da Norma do Cliente:</label>
+<textarea class="form-control input-sm text-field" id="desc_norma_cliente" name="desc_norma_cliente" rows="5" data-bind="value: DESC_NORMA_CLIENTE"></textarea>                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Quantidade Fornecida:</label>
+<input type="number" class="form-control input-sm numeric-field" id="desc_qtd_fornec" name="desc_qtd_fornec" data-bind="value: DESC_QTD_FORNEC" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição de Recusa:</label>
+<textarea class="form-control input-sm text-field" id="desc_recusa_cvtp" name="desc_recusa_cvtp" rows="5" data-bind="value: DESC_RECUSA_CVTP"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data de Análise RVTP:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_analis_rvtp" name="dth_analis_rvtp" data-bind="value: DTH_ANALIS_RVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data de Cadastro:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_cadast_cvtp" name="dth_cadast_cvtp" data-bind="value: DTH_CADAST_CVTP" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data de Cadastro RVTP:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_cadast_rvtp" name="dth_cadast_rvtp" data-bind="value: DTH_CADAST_RVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data Hora Envio:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_envio_rvtp" name="dth_envio_rvtp" data-bind="value: DTH_ENVIO_RVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data de Recebimento:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_receb_cvtp" name="dth_receb_cvtp" data-bind="value: DTH_RECEB_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data de Recusa:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_recusa_cvtp" name="dth_recusa_cvtp" data-bind="value: DTH_RECUSA_CVTP" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Fluxo Rotina Produto:</label>
+<textarea class="form-control input-sm text-field" id="fluxo_rotin_prodrvtp" name="fluxo_rotin_prodrvtp" rows="2" data-bind="value: FLUXO_ROTIN_PRODRVTP"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Identificador Custo Privado:</label>
+<input type="text" class="form-control input-sm text-field" id="idc_custo_prvtp" name="idc_custo_prvtp" maxlength="1" data-bind="value: IDC_CUSTO_PRVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Envio Rotativo:</label>
+<input type="text" class="form-control input-sm text-field" id="idc_envio_rvtp" name="idc_envio_rvtp" maxlength="1" data-bind="value: IDC_ENVIO_RVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Flag Rotativo:</label>
+<input type="text" class="form-control input-sm text-field" id="idc_flag_rvtp" name="idc_flag_rvtp" maxlength="1" data-bind="value: IDC_FLAG_RVTP" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Fluxo Rotativo Código:</label>
+<input type="text" class="form-control input-sm text-field" id="idc_fluxo_rotrvtp" name="idc_fluxo_rotrvtp" maxlength="1" data-bind="value: IDC_FLUXO_ROTRVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Tipo Fornecedor Privado:</label>
+<input type="text" class="form-control input-sm text-field" id="idc_tipo_fornrvtp" name="idc_tipo_fornrvtp" maxlength="1" data-bind="value: IDC_TIPO_FORNRVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Impacto Relevante Processo:</label>
+<input type="text" class="form-control input-sm text-field" id="impact_relev_procervtp" name="impact_relev_procervtp" maxlength="1" data-bind="value: IMPACT_RELEV_PROCERVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Limite ESC2 Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="limit_escdois_max" name="limit_escdois_max" data-bind="value: LIMIT_ESCDOIS_MAX" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Limite ESC2 Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="limit_escdois_min" name="limit_escdois_min" data-bind="value: LIMIT_ESCDOIS_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Limite ESC2:</label>
+<input type="text" class="form-control input-sm text-field" id="limit_escdois_unid" name="limit_escdois_unid" maxlength="10" data-bind="value: LIMIT_ESCDOIS_UNID" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Limite Escuma Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="limit_escum_max" name="limit_escum_max" data-bind="value: LIMIT_ESCUM_MAX" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Limite Escuma Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="limit_escum_min" name="limit_escum_min" data-bind="value: LIMIT_ESCUM_MIN" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Limite de Escuma:</label>
+<input type="text" class="form-control input-sm text-field" id="limit_escum_unid" name="limit_escum_unid" maxlength="10" data-bind="value: LIMIT_ESCUM_UNID" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Limite Residual Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="limit_res_max" name="limit_res_max" data-bind="value: LIMIT_RES_MAX" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Limite Residual Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="limit_res_min" name="limit_res_min" data-bind="value: LIMIT_RES_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Limite Residual:</label>
+<input type="text" class="form-control input-sm text-field" id="limit_res_unid" name="limit_res_unid" maxlength="10" data-bind="value: LIMIT_RES_UNID" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Norma de Referência:</label>
+<textarea class="form-control input-sm text-field" id="norma_refer_cvtp" name="norma_refer_cvtp" rows="5" data-bind="value: NORMA_REFER_CVTP"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Peso Líquido do Produto:</label>
+<input type="number" class="form-control input-sm numeric-field" id="pes_liqui_prod" name="pes_liqui_prod" data-bind="value: PES_LIQUI_PROD" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Produto SAP Simulador:</label>
+<textarea class="form-control input-sm text-field" id="produt_sap_simrvtp" name="produt_sap_simrvtp" rows="1" data-bind="value: PRODUT_SAP_SIMRVTP"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Quantidade de Conjunto de Dimensões:</label>
+<input type="number" class="form-control input-sm numeric-field" id="qtd_conj_dimens" name="qtd_conj_dimens" data-bind="value: QTD_CONJ_DIMENS" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Tamanho de Grão Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="tam_grao_max" name="tam_grao_max" data-bind="value: TAM_GRAO_MAX" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Tamanho de Grão Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="tam_grao_min" name="tam_grao_min" data-bind="value: TAM_GRAO_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Tamanho de Grão:</label>
+<input type="text" class="form-control input-sm text-field" id="tam_grao_unid" name="tam_grao_unid" maxlength="10" data-bind="value: TAM_GRAO_UNID" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor WKG:</label>
+<input type="number" class="form-control input-sm numeric-field" id="valor_wkg" name="valor_wkg" data-bind="value: VALOR_WKG" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor do Diâmetro Especial:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_diam_espec" name="vlr_diam_espec" data-bind="value: VLR_DIAM_ESPEC" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor de Dureza Máxima:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_dureza_max" name="vlr_dureza_max" data-bind="value: VLR_DUREZA_MAX" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor de Dureza Mínima:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_dureza_min" name="vlr_dureza_min" data-bind="value: VLR_DUREZA_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor de Impacto Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_impacto_max" name="vlr_impacto_max" data-bind="value: VLR_IMPACTO_MAX" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor de Impacto Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_impacto_min" name="vlr_impacto_min" data-bind="value: VLR_IMPACTO_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Valor de Impacto:</label>
+<input type="text" class="form-control input-sm text-field" id="vlr_impacto_unid" name="vlr_impacto_unid" maxlength="10" data-bind="value: VLR_IMPACTO_UNID" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Indução:</label>
+<input type="text" class="form-control input-sm text-field" id="vlr_induc" name="vlr_induc" maxlength="10" data-bind="value: VLR_INDUC" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Outro Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_outro_max" name="vlr_outro_max" data-bind="value: VLR_OUTRO_MAX" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Outro Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_outro_min" name="vlr_outro_min" data-bind="value: VLR_OUTRO_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Valor Outro:</label>
+<input type="text" class="form-control input-sm text-field" id="vlr_outro_unid" name="vlr_outro_unid" maxlength="10" data-bind="value: VLR_OUTRO_UNID" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Outros:</label>
+<textarea class="form-control input-sm text-field" id="vlr_outros" name="vlr_outros" rows="1" data-bind="value: VLR_OUTROS"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Oxálico Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_oxalico_max" name="vlr_oxalico_max" data-bind="value: VLR_OXALICO_MAX" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Oxálico Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vlr_oxalico_min" name="vlr_oxalico_min" data-bind="value: VLR_OXALICO_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Valor Oxálico:</label>
+<input type="text" class="form-control input-sm text-field" id="vlr_oxalico_unid" name="vlr_oxalico_unid" maxlength="10" data-bind="value: VLR_OXALICO_UNID" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Dureza:</label>
+<input type="text" class="form-control input-sm text-field" id="vlr_unid_dureza" name="vlr_unid_dureza" maxlength="1" data-bind="value: VLR_UNID_DUREZA" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Alongamento Máximo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vrl_along_max" name="vrl_along_max" data-bind="value: VRL_ALONG_MAX" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Valor Alongamento Mínimo:</label>
+<input type="number" class="form-control input-sm numeric-field" id="vrl_along_min" name="vrl_along_min" data-bind="value: VRL_ALONG_MIN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Unidade de Valor de Alongamento:</label>
+<input type="text" class="form-control input-sm text-field" id="vrl_along_unid" name="vrl_along_unid" maxlength="10" data-bind="value: VRL_ALONG_UNID" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Frequência:</label>
+<input type="text" class="form-control input-sm text-field" id="vrl_frequencia" name="vrl_frequencia" maxlength="10" data-bind="value: VRL_FREQUENCIA" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Espessura Tolerância Centrada:</label>
+<select class="form-control input-sm text-field" id="esp_toler_centrada" name="esp_toler_centrada" data-bind="value: ESP_TOLER_CENTRADA">
+<option value="0">0</option>
+<option value="1">1</option>
+</select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Espessura Tolerância Negativa:</label>
+<select class="form-control input-sm text-field" id="esp_toler_negativa" name="esp_toler_negativa" data-bind="value: ESP_TOLER_NEGATIVA">
+<option value="0">0</option>
+<option value="1">1</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Espessura Tolerância Positiva:</label>
+<select class="form-control input-sm text-field" id="esp_toler_positiva" name="esp_toler_positiva" data-bind="value: ESP_TOLER_POSITIVA">
+<option value="0">0</option>
+<option value="1">1</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Tipo Peso Bobina:</label>
+<input type="text" class="form-control input-sm text-field" id="tipo_peso_bob" name="tipo_peso_bob" maxlength="1" data-bind="value: TIPO_PESO_BOB" />                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Enviar" />
+</form>

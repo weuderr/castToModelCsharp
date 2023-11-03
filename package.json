@@ -1,0 +1,26 @@
+{
+    "name": "csv-to-csharp",
+    "version": "1.0.0",
+    "description": "A tool to convert CSV files to C# ViewModel classes.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "converter": "node converter.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/seu-usuario/csv-to-csharp.git"
+    },
+    "author": "Seu Nome",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/seu-usuario/csv-to-csharp/issues"
+    },
+    "homepage": "https://github.com/seu-usuario/csv-to-csharp#readme",
+    "dependencies": {
+        "uuid": "^8.0.0"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.2.0"
+    }
+}

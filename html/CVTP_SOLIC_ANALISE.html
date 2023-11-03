@@ -1,0 +1,98 @@
+<form id="CvtpSolicAnalise" name="CvtpSolicAnalise" ng-init="vm.configurarPagina()">
+    <div class="row">
+        <br />
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código da Solicitação de Análise:</label>
+<input type="number" class="form-control input-sm numeric-field" id="cod_solic_analise" name="cod_solic_analise" required data-bind="value: COD_SOLIC_ANALISE" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Número Sequencial CVTP:</label>
+<input type="number" class="form-control input-sm numeric-field" id="nun_seq_cvtp" name="nun_seq_cvtp" data-bind="value: NUN_SEQ_CVTP" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Procedimento de Solicitação de Análise:</label>
+<select class="form-control input-sm text-field" id="proc_solic_analis" name="proc_solic_analis" data-bind="value: PROC_SOLIC_ANALIS">
+<option value="ESP">ESP</option>
+<option value="CO">CO</option>
+</select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data e Hora da Solicitação de Análise:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dht_solic_analise" name="dht_solic_analise" data-bind="value: DHT_SOLIC_ANALISE" />                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Email de Envio de Análise:</label>
+<textarea class="form-control input-sm text-field" id="email_envio_analise" name="email_envio_analise" rows="5" data-bind="value: EMAIL_ENVIO_ANALISE"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Código da Área de Solicitação:</label>
+<input type="text" class="form-control input-sm text-field" id="cod_area_solicit" name="cod_area_solicit" maxlength="5" data-bind="value: COD_AREA_SOLICIT" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Email Direcionado de Email:</label>
+<textarea class="form-control input-sm text-field" id="email_direc_email" name="email_direc_email" rows="5" data-bind="value: EMAIL_DIREC_EMAIL"></textarea>                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição Detalhada de Email:</label>
+<textarea class="form-control input-sm text-field" id="desc_detal_email" name="desc_detal_email" rows="3" data-bind="value: DESC_DETAL_EMAIL"></textarea>                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data e Hora Limite de Retorno:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dth_limite_retorn" name="dth_limite_retorn" data-bind="value: DTH_LIMITE_RETORN" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Usuário da Solicitação de Análise:</label>
+<input type="number" class="form-control input-sm numeric-field" id="usuar_solic_analis" name="usuar_solic_analis" data-bind="value: USUAR_SOLIC_ANALIS" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Empresa da Solicitação de Análise:</label>
+<input type="number" class="form-control input-sm numeric-field" id="emprg_solic_analis" name="emprg_solic_analis" data-bind="value: EMPRG_SOLIC_ANALIS" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Descrição de Análise de Email:</label>
+<textarea class="form-control input-sm text-field" id="desc_analis_email" name="desc_analis_email" rows="3" data-bind="value: DESC_ANALIS_EMAIL"></textarea>                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Data e Hora de Retorno de Análise:</label>
+<input type="datetime-local" class="form-control input-sm date-field" id="dht_retorn_analise" name="dht_retorn_analise" data-bind="value: DHT_RETORN_ANALISE" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Indicador de Anexo de Análise:</label>
+<input type="text" class="form-control input-sm text-field" id="idc_anexo_analise" name="idc_anexo_analise" maxlength="1" data-bind="value: IDC_ANEXO_ANALISE" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Usuário de Retorno de Análise:</label>
+<input type="number" class="form-control input-sm numeric-field" id="usuar_retor_analis" name="usuar_retor_analis" data-bind="value: USUAR_RETOR_ANALIS" />                </div>
+            </div>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label>Empresa de Retorno de Análise:</label>
+<input type="number" class="form-control input-sm numeric-field" id="emprg_retor_analis" name="emprg_retor_analis" data-bind="value: EMPRG_RETOR_ANALIS" />                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Enviar" />
+</form>

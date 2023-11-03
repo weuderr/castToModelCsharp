@@ -1,0 +1,12 @@
+Collumn Name,Type,Not Null,Name Field,Allow values
+"COD_SOLIC_CUSTO","NUMBER(6,0)",PK,Código da Solicitacao de analise de custo,
+"NUN_SEQ_CVTP","NUMBER(6,0)",FK:CVTP_PRODUTO,Número Sequencial CVTP,
+"COD_CLIENTE","NUMBER(6,0)",FALSE,Código do Cliente,
+"DESC_ACO_RVTP","VARCHAR2(24)",FALSE,Descrição do Aço RVTP,
+"DESC_GRUPO_CVTP","VARCHAR2(24)",FALSE,Descrição do Grupo CVTP,
+"COD_ACAB_REVEST","VARCHAR2(2)",FALSE,Código do Acabamento/Revestimento,
+"DETAL_DIMENS_ANALIS","VARCHAR2(256)",FALSE,Detalhamento das Dimensões para Análise,
+"CUSTO_DIRETO_ABC","NUMBER(9,0)",FALSE,Custo Direto ABC,
+"DTH_CAD_REG","DATE",FALSE,Data e Hora de Cadastro do Registro,
+"COD_REG_USUAR","NUMBER(6,0)",FALSE,Código de Registro de Usuário,
+"COD_REG_EMPRG","NUMBER(3,0)",FALSE,Código de Registro de Empregado,
