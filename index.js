@@ -883,7 +883,7 @@ function generatePostmanRequestsForModel(modelName, columns, columnTypes, primar
 function generatePostmanCollectionForAllModels(folderPath) {
     const collection = {
         id: faker.string.uuid(),
-        name: 'CVTP - Collection',
+        name: 'BackOffice - Collection',
         description: '',
         order: [],
         folders: [],
@@ -942,7 +942,7 @@ function generatePostmanCollectionForAllModels(folderPath) {
         }
     });
 
-    fs.writeFileSync(path.join(__dirname, 'cvtp-postman-collection.json'), JSON.stringify(collection, null, 2), 'utf8');
+    fs.writeFileSync(path.join(__dirname, 'Lollol-BackOffice-postman-collection.json'), JSON.stringify(collection, null, 2), 'utf8');
 }
 
 
