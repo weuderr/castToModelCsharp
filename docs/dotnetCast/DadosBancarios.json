@@ -1,0 +1,95 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único dos dados bancários",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "TitularConta",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Titular da conta bancária",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "TipoConta",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Tipo de conta bancária",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "NumeroAgencia",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Número da agência bancária",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "NumeroConta",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Número da conta bancária",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Banco",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Nome do banco",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "CodigoBanco",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Código do banco",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "CpfTitular",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "CPF do titular da conta",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "CnpjBanco",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "CNPJ do banco",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

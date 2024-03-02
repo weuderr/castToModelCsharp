@@ -1,0 +1,79 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único do documento de homologação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "IdHomologacao",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador da homologação associada ao documento",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdSindicato",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador do sindicato associado ao documento",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdParticipante",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador do participante associado ao documento",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdDocumento",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Identificador do documento",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "TipoDocumento",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Tipo de documento",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "StatusAssinatura",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Status da assinatura do documento",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

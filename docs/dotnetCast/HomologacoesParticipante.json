@@ -1,0 +1,115 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "varchar",
+    "Tamanho": 36,
+    "Descricao": "Identificador único do participante na homologação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "IdHomologacao",
+    "Tipo": "varchar",
+    "Tamanho": 36,
+    "Descricao": "Identificador da homologação associada ao participante",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdSindicato",
+    "Tipo": "varchar",
+    "Tamanho": 36,
+    "Descricao": "Identificador do sindicato associado ao participante",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdParticipante",
+    "Tipo": "varchar",
+    "Tamanho": 36,
+    "Descricao": "Identificador do participante",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "TipoPapel",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Tipo de papel do participante na homologação",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "IdReferenciaEstabelecimentoLollol",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Identificador de referência do estabelecimento na plataforma Lollol",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "IdReferenciaProfissionalLollol",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Identificador de referência do profissional na plataforma Lollol",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "ValorParticipante",
+    "Tipo": "numeric",
+    "Descricao": "Valor do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "ObrigatoriedadeAssinatura",
+    "Tipo": "boolean",
+    "Descricao": "Indica se a assinatura é obrigatória para o participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "OrdemAssinatura",
+    "Tipo": "integer",
+    "Descricao": "Ordem de assinatura do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "RecebeNotificacao",
+    "Tipo": "boolean",
+    "Descricao": "Indica se o participante recebe notificações",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Observacao",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Observação sobre o participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

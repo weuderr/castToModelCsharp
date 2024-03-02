@@ -1,0 +1,55 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único da relação entre sindicato e região de homologação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "Cnpj",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "CNPJ do sindicato associado à região de homologação",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "IdHomologacaoRegiao",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador da região de homologação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "HomologacoesRegiaoId",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador da região de homologação",
+    "Obrigatoriedade": "não",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

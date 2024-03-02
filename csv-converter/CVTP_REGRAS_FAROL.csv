@@ -1,8 +1,0 @@
-Collumn Name,Type,Not Null,Name Field,Allow values
-"COD_REGRA_FAROL","NUMBER(6,0)",PK,Código da Regra do Farol,
-"COD_AREA_NEGOCIO","VARCHAR2(24)",FALSE,Código da Área de Negócio,
-"LIMIT_HORA_RETORNO","NUMBER(4,0)",FALSE,Limite de Hora de Retorno,
-"PERC_LIMIT_AMARELO","NUMBER(3,0)",FALSE,Percentual de Limite Amarelo,
-"DTH_CAD_REG","DATE",FALSE,Data de Cadastro da Regra,
-"COD_REG_USUAR","NUMBER(6,0)",FALSE,Código do Registro do Usuário,
-"COD_REG_EMPRG","NUMBER(3,0)",FALSE,Código do Registro da Empresa,

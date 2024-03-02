@@ -1,0 +1,108 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "Logradouro",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Logradouro do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Numero",
+    "Tipo": "integer",
+    "Descricao": "Número do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Complemento",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Complemento do endereço",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Bairro",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Bairro do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Cidade",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Cidade do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Estado",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Estado do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Cep",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "CEP do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Pais",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "País do endereço",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Latitude",
+    "Tipo": "real",
+    "Descricao": "Latitude do endereço",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Longitude",
+    "Tipo": "real",
+    "Descricao": "Longitude do endereço",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

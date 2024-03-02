@@ -1,0 +1,122 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único da cobrança de homologação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "IdHomologacao",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador da homologação associada à cobrança",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdSindicato",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador do sindicato associado à cobrança",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdParticipante",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador do participante associado à cobrança",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "ValorCobranca",
+    "Tipo": "numeric",
+    "Descricao": "Valor da cobrança",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Periodicidade",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Periodicidade da cobrança",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DiaCobranca",
+    "Tipo": "integer",
+    "Descricao": "Dia da cobrança",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "MesCobranca",
+    "Tipo": "integer",
+    "Descricao": "Mês da cobrança",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "AnoCobranca",
+    "Tipo": "integer",
+    "Descricao": "Ano da cobrança",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "StatusCobranca",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Status da cobrança",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "FormatoCobranca",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Formato da cobrança",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "ObservacaoCobranca",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Observação da cobrança",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DataConfirmacaoPagamento",
+    "Tipo": "timestamp with time zone",
+    "Descricao": "Data de confirmação de pagamento",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

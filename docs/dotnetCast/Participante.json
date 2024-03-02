@@ -1,0 +1,207 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "varchar",
+    "Tamanho": 36,
+    "Descricao": "Identificador único do participante",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "IdUsuario",
+    "Tipo": "varchar",
+    "Tamanho": 36,
+    "Descricao": "Identificador do usuário associado ao participante",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdSindicato",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Identificador do sindicato associado ao participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdEstabelecimento",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Identificador do estabelecimento associado ao participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "IdProfissional",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Identificador do profissional associado ao participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Nome",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Nome do participante",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "CargoFuncao",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Cargo ou função do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Observacao",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Observação sobre o participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Tipo",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Tipo do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Cpf",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "CPF do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DocumentoIdentificacao",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Número do documento de identificação do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DocumentoTipo",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Tipo do documento de identificação do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DocumentoOrgaoEmissor",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Órgão emissor do documento de identificação do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DocumentoDataEmissao",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Data de emissão do documento de identificação do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DocumentoDataValidade",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Data de validade do documento de identificação do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "TelefonePrincipal",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Telefone principal do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "TelefoneSecundario",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Telefone secundário do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "TelefoneMensagemPrincipal",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Telefone para mensagem principal do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "TelefoneMensagemSecundario",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Telefone para mensagem secundária do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "EmailPrincipal",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Email principal do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "EmailSecundario",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Email secundário do participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "IdEndereco",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Identificador do endereço associado ao participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "IdDadosBancarios",
+    "Tipo": "varchar",
+    "Tamanho": 2560,
+    "Descricao": "Identificador dos dados bancários associados ao participante",
+    "Obrigatoriedade": "não",
+    "Observacoes": "foreign key"
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

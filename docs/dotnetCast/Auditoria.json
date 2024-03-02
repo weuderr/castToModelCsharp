@@ -1,0 +1,86 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único da área de atuação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "Origem",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Origem da auditoria",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Acao",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Ação da auditoria",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Tipo",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Tipo da auditoria",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DadosProcessados",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Dados processados da auditoria",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "RetornoProcessamento",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Retorno de processamento da auditoria",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Data",
+    "Tipo": "timestamp with time zone",
+    "Descricao": "Data da auditoria",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "UsuarioAtualizacao",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Usuário de atualização da auditoria",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

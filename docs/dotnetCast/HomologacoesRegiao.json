@@ -1,0 +1,102 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único das regiões de homologação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "Nome",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Nome da região de homologação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Descricao",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Descrição da região de homologação",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "ReferenciaLatLong",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Referência de latitude e longitude da região",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "ReferenciaCep",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Referência de CEP da região",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Distancia",
+    "Tipo": "double precision",
+    "Descricao": "Distância da região",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Bairro",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Bairro da região",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Regiao",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Região da região",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Cidade",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Cidade da região",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Estado",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Estado da região",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]

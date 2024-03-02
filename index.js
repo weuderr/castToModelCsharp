@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const {faker} = require('@faker-js/faker');
+const fileGenerator = process.argv.slice(2);
 
 function splitCsvLine(line) {
     const regex = /(?:^|,)("(?:[^"]+)*"|[^,]*)/g;
@@ -72,7 +73,7 @@ function injectForeignKeyReferences(folderPath) {
     });
 
     Object.entries(foreignKeyReferences).forEach(([table, references]) => {
-        const edmxModelFilePath = path.join(__dirname, 'edmxModel', `${table}.cs`);
+        const edmxModelFilePath = path.join(__dirname, 'Generated/'+fileGenerator[0]+'/edmxModel', `${table}.cs`);
 
         if (fs.existsSync(edmxModelFilePath)) {
             let edmxModelCode = fs.readFileSync(edmxModelFilePath, 'utf8');
@@ -681,8 +682,7 @@ function generateDalClassesForAllModels(folderPath) {
             });
 
             if (!primaryKey) {
-                console.error(`Erro: A chave primária não foi definida para o modelo ${modelName}.`);
-                return;
+                primaryKey = columns[0];
             }
 
             const foreignKeys = getForeignKeyFromAllFiles(folderPath, tableName);
@@ -691,13 +691,13 @@ function generateDalClassesForAllModels(folderPath) {
             const bllCode = generateBllClass(tableName, modelName);
 
             // Escreva a classe DAL em um arquivo na pasta 'DataAccess'
-            const dalPath = path.join(__dirname, 'DataAccess', `${modelName}Dal.cs`);
+            const dalPath = path.join(__dirname, 'Generated/'+fileGenerator[0]+'/DataAccess', `${modelName}Dal.cs`);
             fs.writeFileSync(dalPath, dalCode, 'utf8');
             console.log(`Classe DAL ${modelName}Dal.cs criada com sucesso!`);
 
 
             // Escreva a classe BLL em um arquivo na pasta 'BusinessLogic'
-            const bllPath = path.join(__dirname, 'BusinessLogic', `${modelName}Bll.cs`);
+            const bllPath = path.join(__dirname, 'Generated/'+fileGenerator[0]+'/BusinessLogic', `${modelName}Bll.cs`);
             fs.writeFileSync(bllPath, bllCode, 'utf8');
             console.log(`Classe BLL ${modelName}Bll.cs criada com sucesso!`);
         }
@@ -738,8 +738,8 @@ function getRandomValueByColumnType(columnType, values = null) {
             });
         }
     } else if (columnType.includes('varchar')) {
-        const getSize = columnType.split('(')[1].split(')')[0];
-        let sizeChars = getSize ? parseInt(getSize) : 1;
+        let getSize = columnType.match(/\d+/);
+        let sizeChars = getSize?.length > 0 ? parseInt(getSize[0]) : 1;
 
         if (sizeChars > 5) sizeChars = sizeChars - 2;
         if (sizeChars > 1000) return faker.lorem.paragraph();
@@ -757,7 +757,7 @@ function getRandomValueByColumnType(columnType, values = null) {
 }
 
 function generatePostmanRequestsForModel(modelName, columns, columnTypes, primaryKey, foreignKeys) {
-    const baseApiUrl = 'http://localhost:61112';
+    const baseApiUrl = '{{baseUrl}}';
     const requests = [];
     const stringifiedForeignKeys = foreignKeys.map(fk => `${fk.referencedTable}`).join(',');
 
@@ -767,7 +767,7 @@ function generatePostmanRequestsForModel(modelName, columns, columnTypes, primar
         id: faker.string.uuid(),
         name: `Busca - ${modelName} por ID`,
         method: 'GET',
-        url: `${baseApiUrl}/${modelName}/GetData?${primaryKey}=${valuesOfGet.value}&relations=${stringifiedForeignKeys}`,
+        url: `${baseApiUrl}/${modelName}?${primaryKey}=${valuesOfGet.value}&relations=${stringifiedForeignKeys}`,
         query: [
             valuesOfGet,
             {
@@ -789,9 +789,9 @@ function generatePostmanRequestsForModel(modelName, columns, columnTypes, primar
     }).filter(Boolean);
     requests.push({
         id: faker.string.uuid(),
-        name: `Busca - ${modelName} com body`,
-        method: 'POST',
-        url: `${baseApiUrl}/${modelName}/GetListDataWithObject?relations=${stringifiedForeignKeys}`,
+        name: `Busca - Todos ${modelName}`,
+        method: 'GET',
+        url: `${baseApiUrl}/${modelName}?relations=${stringifiedForeignKeys}`,
         headerData: [{key: 'Content-Type', value: 'application/json'}],
         data: searchByPostBody,
         query: [
@@ -823,7 +823,7 @@ function generatePostmanRequestsForModel(modelName, columns, columnTypes, primar
         id: faker.string.uuid(),
         name: `Cria - ${modelName}`,
         method: 'POST',
-        url: `${baseApiUrl}/${modelName}/CreateData`,
+        url: `${baseApiUrl}/${modelName}`,
         headerData: [{key: 'Content-Type', value: 'application/json'}],
         data: insertData,
         dataMode: 'raw',
@@ -857,7 +857,7 @@ function generatePostmanRequestsForModel(modelName, columns, columnTypes, primar
         id: faker.string.uuid(),
         name: `Atualiza - ${modelName}`,
         method: 'PUT',
-        url: `${baseApiUrl}/${modelName}/UpdateData`,
+        url: `${baseApiUrl}/${modelName}`,
         headerData: [{key: 'Content-Type', value: 'application/json'}],
         data: updateData,
         dataMode: 'raw',
@@ -872,7 +872,7 @@ function generatePostmanRequestsForModel(modelName, columns, columnTypes, primar
         name: `Remove - ${modelName}`,
         headerData: [{key: 'Content-Type', value: 'application/json'}],
         method: 'DELETE',
-        url: `${baseApiUrl}/${modelName}/DeleteData?${primaryKey}=${valuesOfDelete.value}`,
+        url: `${baseApiUrl}/${modelName}?${primaryKey}=${valuesOfDelete.value}`,
         query: [valuesOfDelete],
         dataMode: 'params'
     });
@@ -919,8 +919,7 @@ function generatePostmanCollectionForAllModels(folderPath) {
             });
 
             if (!primaryKey) {
-                console.error(`Erro: A chave primária não foi definida para o modelo ${modelName}.`);
-                return;
+                primaryKey = columns[0];
             }
 
             const foreignKeys = getForeignKeyFromAllFiles(folderPath, tableName);
@@ -942,7 +941,7 @@ function generatePostmanCollectionForAllModels(folderPath) {
         }
     });
 
-    fs.writeFileSync(path.join(__dirname, 'Lollol-BackOffice-postman-collection.json'), JSON.stringify(collection, null, 2), 'utf8');
+    fs.writeFileSync(path.join(__dirname, 'Generated/'+fileGenerator[0]+'-postman-collection.json'), JSON.stringify(collection, null, 2), 'utf8');
 }
 
 
@@ -1223,7 +1222,7 @@ function generateControllersForAllModels(folderPath) {
             });
             const controllerCode = generateControllerForModel(folderPath, modelName, modelNameCamelCase, `${primaryKey || modelName}`, columns);
 
-            const outputPath = path.join(__dirname, 'controllers', `${modelNameCamelCase}Controller.cs`);
+            const outputPath = path.join(__dirname, 'Generated/'+fileGenerator[0]+'/controllers', `${modelNameCamelCase}Controller.cs`);
             fs.writeFileSync(outputPath, controllerCode, 'utf8');
 
             console.log(`Controlador ${modelNameCamelCase}Controller.cs criado com sucesso!`);
@@ -1308,7 +1307,8 @@ function csvToHtmlForm(csvData, formId) {
                     } else if (type.includes("date")) {
                         inputHtml = `<input type="datetime-local" class="form-control ${cssClass}" id="${columnName}" name="${columnName}"`;
                     } else if (type.includes("varchar")) {
-                        const maxLength = parseInt(type.match(/\((.*?)\)/)[1]);
+                        const getLength = type.match(/\((.*?)\)/);
+                        let maxLength = getLength?.length > 1 ? parseInt(getLength[1]) : 0;
 
                         if (maxLength > 100) {
                             inputHtml = `<textarea class="form-control ${cssClass}" id="${columnName}" name="${columnName}" rows="${Math.ceil(maxLength / 250)}"`;
@@ -1357,9 +1357,28 @@ function csvToHtmlForm(csvData, formId) {
     return formHtml;
 }
 
+function createDotNetDirectories() {
+    const directories = [
+        'Generated/',
+        'Generated/'+fileGenerator[0]+'/',
+        'Generated/'+fileGenerator[0]+'/viewModel/',
+        'Generated/'+fileGenerator[0]+'/edmxModel/',
+        'Generated/'+fileGenerator[0]+'/html/',
+        'Generated/'+fileGenerator[0]+'/DataAccess/',
+        'Generated/'+fileGenerator[0]+'/BusinessLogic/',
+        'Generated/'+fileGenerator[0]+'/controllers/',
+        'Generated/'+fileGenerator[0]+'/csv-converter/',
+    ];
 
+    directories.forEach(dir => {
+        if (fs.existsSync(path.join(__dirname, dir))) {
+            return true;
+        }
+        fs.mkdirSync(path.join(__dirname, dir));
+    });
+}
 function readAllCSVFilesFromFolder(folderPath) {
-
+    createDotNetDirectories();
     const files = fs.readdirSync(folderPath);
     files.forEach(file => {
         const fullPath = path.join(folderPath, file);
@@ -1375,18 +1394,18 @@ function readAllCSVFilesFromFolder(folderPath) {
             const csvToCode = csvToHtmlForm(fileData, modelNameCamelCase);
 
             // Escreve o modelo em um arquivo na pasta 'ViewModel'
-            const outputPath = path.join(__dirname, 'viewModel', `${modelNameCamelCase}ViewModel.cs`);
+            const outputPath = path.join(__dirname, 'Generated/'+fileGenerator[0]+'/viewModel', `${modelNameCamelCase}ViewModel.cs`);
             fs.writeFileSync(outputPath, viewModelCode, 'utf8');
             console.log(`ViewModelo ${modelNameCamelCase}ViewModel.cs criado com sucesso!`);
 
             // Escreve o modelo em um arquivo na pasta 'edmxModel'
-            const outputPath2 = path.join(__dirname, 'edmxModel', `${modelName}.cs`);
+            const outputPath2 = path.join(__dirname, 'Generated/'+fileGenerator[0]+'/edmxModel', `${modelName}.cs`);
             fs.writeFileSync(outputPath2, edmxModelCode, 'utf8');
             console.log(`EdmxModelo ${modelName}.cs criado com sucesso!`);
 
 
             // Escreve o modelo em um arquivo na pasta 'edmxModel'
-            const outputPath3 = path.join(__dirname, 'html', `${modelName}.html`);
+            const outputPath3 = path.join(__dirname, 'Generated/'+fileGenerator[0]+'/html', `${modelName}.html`);
             fs.writeFileSync(outputPath3, csvToCode, 'utf8');
             console.log(`EdmxModelo ${modelName}.cs criado com sucesso!`);
 
@@ -1401,4 +1420,4 @@ function readAllCSVFilesFromFolder(folderPath) {
 
 }
 
-readAllCSVFilesFromFolder('./csv-converter/');
+readAllCSVFilesFromFolder('./docs/'+fileGenerator[0]+'/');

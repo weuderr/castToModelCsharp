@@ -1,0 +1,118 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Descricao": "Identificador único da homologação de fluxos",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "primary key, UUID"
+  },
+  {
+    "Atributo": "Nome",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Nome da homologação de fluxos",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Versao",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Versão da homologação de fluxos",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "FluxoAtivo",
+    "Tipo": "boolean",
+    "Descricao": "Indica se o fluxo está ativo",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Descricao",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Descrição da homologação de fluxos",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "Cnpj",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "CNPJ da homologação de fluxos",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "SindicatosParticipantes",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Sindicatos participantes da homologação de fluxos",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "OutrosParticipantes",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Outros participantes da homologação de fluxos",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "RegioesFluxo",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Regiões do fluxo da homologação",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "ModelosDocumentoFluxo",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Modelos de documento do fluxo da homologação",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DadosVariaveisDocumentos",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Dados variáveis dos documentos da homologação",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "UsuarioAtualizacao",
+    "Tipo": "string",
+    "Tamanho": 2560,
+    "Descricao": "Usuário de atualização da homologação de fluxos",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "DBStatus",
+    "Tipo": "integer",
+    "Descricao": "Status do banco de dados",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "default 0"
+  },
+  {
+    "Atributo": "Created",
+    "Tipo": "timestamp",
+    "Descricao": "Data de criação",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "LastUpdated",
+    "Tipo": "timestamp",
+    "Descricao": "Data de última atualização",
+    "Obrigatoriedade": "sim",
+    "Observacoes": ""
+  }
+]
