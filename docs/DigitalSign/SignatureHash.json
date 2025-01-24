@@ -1,0 +1,58 @@
+[
+  {
+    "Atributo": "FilePath",
+    "Tipo": "string",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Caminho da assinatura"
+  },
+  {
+    "Atributo": "PublicKey",
+    "Tipo": "string",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Chave pública para verificação da assinatura"
+  },
+  {
+    "Atributo": "PrivateKey",
+    "Tipo": "string",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Chave privada para assinatura do documento"
+  },
+  {
+    "Atributo": "Hash",
+    "Tipo": "byte[]",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Hash do arquivo"
+  },
+  {
+    "Atributo": "Signature",
+    "Tipo": "byte[]",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Assinatura do arquivo"
+  },
+  {
+    "Atributo": "EnvelopeSignatureId",
+    "Tipo": "string",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Assinatura do envelope"
+  },
+  {
+    "Atributo": "ApplicationUser",
+    "Tipo": "IEnumerable<ApplicationUser>",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Relação com ApplicationUser"
+  },
+  {
+    "Atributo": "EnvelopeSignature",
+    "Tipo": "EnvelopeSignature",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Entidade EnvelopeSignature relacionada"
+  }
+]

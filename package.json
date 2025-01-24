@@ -6,7 +6,10 @@
     "scripts": {
         "start": "node index.js SBeleza",
         "converter": "node converterSqlToCsv.js SBeleza",
-        "generate.netCore": "node generate.netCore.js SBeleza",
+        "generate.netCore": "node generate.netCore.js DigitalSign",
+        "generate.netCore.lal": "node generate.netCore.Aperam.js LAL",
+        "generate.netCore.SBeleza": "node generate.netCore.js SBeleza",
+        "generate.netCore.SBeleza.Cliente": "node generate.netCore.js SBeleza CadParticipante Cliente",
         "generate.netCore.simple": "node generate.netCore.js SBeleza CadParticipante Cliente"
     },
     "repository": {

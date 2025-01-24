@@ -1,0 +1,36 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Obrigatoriedade": "PK",
+    "Descricao": "Chave primária do registro"
+  },
+  {
+    "Atributo": "UserId",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Obrigatoriedade": "FK:AdmUser",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "DocumentId",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "DocumentName",
+    "Tipo": "string",
+    "Tamanho": 128,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "Status",
+    "Tipo": "Enumerators",
+    "Obrigatoriedade": "TRUE",
+    "Descricao": "Status do documento: 0 - Enviado, 1 - Assinado, 2 - Cancelado"
+  }
+]

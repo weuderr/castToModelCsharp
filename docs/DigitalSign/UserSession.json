@@ -1,0 +1,65 @@
+[
+  {
+    "Atributo": "Id",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Obrigatoriedade": "PK",
+    "Descricao": "Chave primária do registro"
+  },
+  {
+    "Atributo": "UserId",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Obrigatoriedade": "FK:User",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "IpAddress",
+    "Tipo": "string",
+    "Tamanho": 36,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "Device",
+    "Tipo": "string",
+    "Tamanho": 128,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "Phone",
+    "Tipo": "string",
+    "Tamanho": 24,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "Email",
+    "Tipo": "string",
+    "Tamanho": 128,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "Token",
+    "Tipo": "string",
+    "Tamanho": 1024,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "SessionStartedAt",
+    "Tipo": "DateTime",
+    "Tamanho": 0,
+    "Obrigatoriedade": "TRUE",
+    "Descricao": ""
+  },
+  {
+    "Atributo": "SessionEndedAt",
+    "Tipo": "DateTime",
+    "Tamanho": 0,
+    "Obrigatoriedade": "FALSE",
+    "Descricao": ""
+  }
+]
