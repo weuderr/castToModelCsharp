@@ -1,0 +1,37 @@
+[
+  {
+    "Atributo": "COD_MARCA",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único da marca.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "NOME_MARCA",
+    "Tipo": "VARCHAR2(500)",
+    "Descricao": "Nome da marca (ex: Toyota, Honda).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DTH_CRIACAO",
+    "Tipo": "DATE",
+    "Descricao": "Data em que o registro foi criado.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DTH_ATUALIZACAO",
+    "Tipo": "DATE",
+    "Descricao": "Data da última atualização do registro.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "NUM_IDENT_USUAR",
+    "Tipo": "NUMBER(10)",
+    "Descricao": "Usuário de alteração/criação.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  }
+]

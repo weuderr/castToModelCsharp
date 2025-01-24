@@ -1,0 +1,51 @@
+[
+  {
+    "Atributo": "COD_LEILAO",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único do leilão.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "DESCRICAO",
+    "Tipo": "VARCHAR2(500)",
+    "Descricao": "Nome do leilão.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DTH_INICIO",
+    "Tipo": "DATE",
+    "Descricao": "Data e hora de início do leilão.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DTH_FIM",
+    "Tipo": "DATE",
+    "Descricao": "Data e hora de término do leilão.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "STATUS",
+    "Tipo": "NUMBER(2)",
+    "Descricao": "Status atual do leilão.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DTH_CADASTRO",
+    "Tipo": "DATE",
+    "Descricao": "Data de cadastro do leilão.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "NUM_IDENT_USUAR",
+    "Tipo": "NUMBER(10)",
+    "Descricao": "Usuário de cadastro do leilão.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  }
+]

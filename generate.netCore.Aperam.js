@@ -82,42 +82,32 @@ namespace ${baseNamespace}.Domain.Interfaces.Services
 
 // Geração de arquivos
 function generateModelFile(className, data) {
-  const typeMapping = {
-    "NUMBER": "int",
-    "VARCHAR2": "string",
-    "DATE": "DateTime",
-    "CLOB": "string",
-    "DECIMAL": "decimal",
-    "TIMESTAMP": "DateTime",
-    "CHAR": "string"
-  };
-
   const converted = JSON.parse(data);
-  const properties = converted.map(field => {
+  let foreignKey = [];
+  const values = converted.map(field => {
     const csharpType = typeMapping[field.Tipo.toUpperCase()] || "object";
     const camelCaseAttribute = castToPascalCase(field.Atributo);
     const isForeignKey = field.Observacoes && field.Observacoes.toUpperCase().includes("FOREIGN KEY");
-    const foreignKey = isForeignKey ? `\n        public ICollection<${camelCaseAttribute}> ${camelCaseAttribute} { get; set; }` : "";
+    foreignKey.push(isForeignKey ? `\n        public ICollection<${camelCaseAttribute}> ${camelCaseAttribute} { get; set; }` : "");
 
-    return `        public ${csharpType} ${camelCaseAttribute} { get; set; }${foreignKey}`;
+    return `        public ${csharpType} ${camelCaseAttribute} { get; set; }`;
   }).join('\n\n');
 
-  const content = `using Microsoft.AspNetCore.Identity;
-using ${baseNamespace}.Domain.Interfaces.Entities;
-using ${baseNamespace}.Domain.Models;
+  const content = `using Aperam.${baseNamespace}.Domain.Model;
 
-namespace ${baseNamespace}.Domain.Entities
+namespace Aperam.${baseNamespace}.Domain.Entities
 {
-    public class ${className} : Entity
+    public class ${className} : BaseModel
     {
         public ${className}()
         {
         }
 
-${properties}
+${values}
+
+${foreignKey.join('')}
     }
 }`;
-
   fs.writeFileSync(`Generated/${baseNamespace}/Models/${className}.cs`, content);
 }
 
@@ -130,35 +120,57 @@ const typeMapping = {
   "TIMESTAMP": "DateTime",
   "CHAR": "string"
 };
-
+// function generateViewModel(className, data) {
+//   const fields = JSON.parse(data);
+//   let foreignKey = [];
+//   const properties = fields.map(field => {
+//     const csharpType = typeMapping[field.Tipo.toUpperCase()] || "object";
+//     const camelCaseAttribute = castToPascalCase(field.Atributo);
+//     const isForeignKey = field.Observacoes && field.Observacoes.toUpperCase().includes("FOREIGN KEY");
+//     // get last part of split
+//     foreignKey.push(isForeignKey ? `\n        public ICollection<${field.Descricao.split(' ')[field.Descricao.split(' ').length - 1]}> ${camelCaseAttribute} { get; set; }` : "");
+//
+//     return `public ${csharpType} ${camelCaseAttribute} { get; set; }`;
+//   }).join('\n\n');
+//
+//   const content = `using System;
+//
+// namespace Aperam.${baseNamespace}.API.ViewModels
+// {
+//     public class ${className}ViewModel
+//     {
+// ${properties}
+//
+// ${foreignKey.join('')}
+//     }
+// }`;
+//
+//   fs.writeFileSync(`Generated/${baseNamespace}/ViewModels/${className}ViewModel.cs`, content);
+// }
 function generateViewModel(className, data) {
-  const typeMapping = {
-    "NUMBER": "int",
-    "VARCHAR2": "string",
-    "DATE": "DateTime",
-    "CLOB": "string",
-    "DECIMAL": "decimal",
-    "TIMESTAMP": "DateTime",
-    "CHAR": "string"
-  };
-
   const fields = JSON.parse(data);
+  let foreignKey = [];
   const properties = fields.map(field => {
     const csharpType = typeMapping[field.Tipo.toUpperCase()] || "object";
-    const camelCaseAttribute = castToPascalCase(field.Atributo);
+    const camelCaseAttribute = castCamelCase(field.Atributo);
     const isForeignKey = field.Observacoes && field.Observacoes.toUpperCase().includes("FOREIGN KEY");
-    const foreignKey = isForeignKey ? `\n        public ICollection<${camelCaseAttribute}> ${camelCaseAttribute} { get; set; }` : "";
+    // get last part of split
+    foreignKey.push(isForeignKey ? `\n        public ICollection<${castToPascalCase(field.Tabela)}> ${castToPascalCase(field.Tabela)} { get; set; }` : "");
 
-    return `public ${csharpType} ${camelCaseAttribute} { get; set; }${foreignKey}`;
+    return `public ${csharpType} ${camelCaseAttribute} { get; set; }`;
   }).join('\n\n');
 
-  const content = `using System;
+  const content = `using System.Collections.Generic;
+using Aperam.LAL.Domain.Entities;
+using System;
 
-namespace ${baseNamespace}.API.ViewModels
+namespace Aperam.${baseNamespace}.API.ViewModels
 {
     public class ${className}ViewModel
     {
 ${properties}
+
+${foreignKey.join('')}
     }
 }`;
 
@@ -304,38 +316,30 @@ ${selectFields}
 }
 
 function generateEntityFile(className, data) {
-  const typeMapping = {
-    "NUMBER": "int",
-    "VARCHAR2": "string",
-    "DATE": "DateTime",
-    "CLOB": "string",
-    "DECIMAL": "decimal",
-    "TIMESTAMP": "DateTime",
-    "CHAR": "string"
-  };
-
   const converted = JSON.parse(data);
+  let foreignKey = [];
   const properties = converted.map(field => {
     const csharpType = typeMapping[field.Tipo.toUpperCase()] || "object";
     const camelCaseAttribute = castToPascalCase(field.Atributo);
     const columnName = field.Atributo.toUpperCase();
-    const isPrimaryKey = field.Observacoes && field.Observacoes.toLowerCase().includes("primary key");
+    const isPrimaryKey = field.Observacoes && field.Observacoes.toUpperCase().includes("PRIMARY KEY");
     const isForeignKey = field.Observacoes && field.Observacoes.toUpperCase().includes("FOREIGN KEY");
     const databaseGenerated = isPrimaryKey ? "[DatabaseGenerated(DatabaseGeneratedOption.None)]\n" : "";
-    const foreignKey = isForeignKey ? `\n        public virtual ICollection<${camelCaseAttribute}> ${camelCaseAttribute} { get; set; }` : "";
+    foreignKey.push(isForeignKey ? `\n        public virtual ICollection<${camelCaseAttribute}> ${camelCaseAttribute} { get; set; }` : "");
 
-    return `${(isPrimaryKey ? "[Key]\n" : "")}[Column(\"${columnName}\")]\n${databaseGenerated}public ${csharpType} ${camelCaseAttribute} { get; set; }${foreignKey}`;
+    return `        ${(isPrimaryKey ? "[Key]\n" : "")}[Column(\"${columnName}\")]\n        ${databaseGenerated}public ${csharpType} ${camelCaseAttribute} { get; set; }`;
   }).join('\n\n');
 
-  const content = `using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+  const content = `using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ${baseNamespace}.Infrastructure.Entity
+namespace Aperam.${baseNamespace}.Infrastructure.Entity
 {
-    [Table("ACESITA_PESA.${className.toUpperCase()}")]
+    [Table("ACESITA_LAL.${castToSnakeCase(className).toUpperCase()}")]
     public class ${className}Entity
     {
 ${properties}
+
+${foreignKey.join('')}
     }
 }`;
 
@@ -432,9 +436,7 @@ function generateController(className, primaryKeyField) {
   const namePrimaryKey = primaryKeyField ? castCamelCase(primaryKeyField.Atributo) : "id";
   const controllerName = `${className}Controller`;
   const modelName = className;
-  const varname = lowerFirstLetter(className);
   const serviceInterface = `${className}Service`;
-  const repositoryInterface = `${className}Repository`;
 
   const content = `using System.Net.Http;
 using System.Threading.Tasks;
@@ -443,16 +445,19 @@ using Newtonsoft.Json;
 using Aperam.${baseNamespace}.API.Utils;
 using Aperam.${baseNamespace}.Domain.Entities;
 using Aperam.${baseNamespace}.Domain.Service;
+using System.Collections.Generic;
+using Aperam.LAL.API.ViewModels;
+using AutoMapper;
 
 namespace Aperam.${baseNamespace}.API.Controllers
 {
     /// <summary>
     /// Inicializa uma nova instância da classe ${controllerName}.
     /// </summary>
-    [Route("api/${modelName}")]
+    [RoutePrefix("api/${modelName}")]
     public class ${controllerName} : BaseController
     {
-        private ${serviceInterface} _local${className}Service = null;
+        private readonly ${serviceInterface} _local${className}Service;
         
         /// <summary>
         /// Construtor para ${controllerName}.
@@ -464,7 +469,6 @@ namespace Aperam.${baseNamespace}.API.Controllers
         
         #region Métodos públicos ${modelName}
         
-        
         /// <summary>
         /// Método para obter todos os registros de ${modelName}.
         /// </summary>
@@ -474,7 +478,7 @@ namespace Aperam.${baseNamespace}.API.Controllers
             try
             {
               var ${modelName.toLowerCase()}List = await _local${className}Service.GetAllAsync();
-              return HttpMessages.OK(Request, JsonConvert.SerializeObject(${modelName.toLowerCase()}List));
+              return HttpMessages.OK(Request, Mapper.Map<IEnumerable<${modelName}ViewModel>>(${modelName.toLowerCase()}List));
             }
             catch (System.Exception ex)
             {
@@ -495,7 +499,7 @@ namespace Aperam.${baseNamespace}.API.Controllers
               {
                   return HttpMessages.BadRequest(Request, new { Message = "Registro não encontrado!" });
               }
-              return HttpMessages.OK(Request, JsonConvert.SerializeObject(${modelName.toLowerCase()}));
+              return HttpMessages.OK(Request, Mapper.Map<${modelName}ViewModel>(${modelName.toLowerCase()}));
             }
             catch (System.Exception ex)
             {
@@ -604,14 +608,14 @@ async function processAndGenerate(files) {
           !primaryKeyField ? primaryKeyField = converted[0] : null;
 
           generateRepositoryInterface(className);
-          generateServiceInterface(className);
+          generateEntityFile(className, data);
+          // generateServiceInterface(className);
           generateService(className, primaryKeyField);
+          generateViewModel(className, data);
           generateRepository(className, data);
           generateController(className, primaryKeyField);
-          generateValidationFile(className, data);
-          generateEntityFile(className, data);
           generateModelFile(className, data);
-          generateViewModel(className, data);
+          // generateValidationFile(className, data);
         });
       }
     }

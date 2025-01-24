@@ -1,0 +1,46 @@
+[
+  {
+    "Atributo": "COD_LANCE",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único do lance.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "COD_LEILAO",
+    "Tipo": "NUMBER",
+    "Descricao": "Referência ao leilão (ACESITA_LAL.LEILOES_DETALHES).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "LEILOES_DETALHES"
+  },
+  {
+    "Atributo": "COD_ITEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Referência ao item (ACESITA_LAL_ITENS).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "ITENS"
+  },
+  {
+    "Atributo": "NUM_IDENT_USUARIO",
+    "Tipo": "NUMBER(10)",
+    "Descricao": "Identificador do usuário que deu o lance (usuário de rede).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "VALOR",
+    "Tipo": "DECIMAL(10,2)",
+    "Descricao": "Valor do lance.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DATAHORA",
+    "Tipo": "DATE",
+    "Descricao": "Data e hora do lance.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  }
+]

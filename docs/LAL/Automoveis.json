@@ -1,0 +1,45 @@
+[
+  {
+    "Atributo": "COD_AUTOMOVEL",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único do automóvel.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "COD_ITEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Referência ao item na tabela ACESITA_LAL_ITENS.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "ITENS"
+  },
+  {
+    "Atributo": "MODELO",
+    "Tipo": "VARCHAR2(800)",
+    "Descricao": "Modelo do automóvel.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "MARCA",
+    "Tipo": "VARCHAR2(500)",
+    "Descricao": "Marca do automóvel.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "ANO_FRABRICACAO",
+    "Tipo": "NUMBER(4)",
+    "Descricao": "Ano de fabricação.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "QUILOMETRAGEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Quilometragem do automóvel.",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  }
+]

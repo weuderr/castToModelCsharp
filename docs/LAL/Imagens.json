@@ -1,0 +1,24 @@
+[
+  {
+    "Atributo": "COD_IMAGEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único da imagem.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "COD_ITEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Referência ao item na tabela ACESITA_LAL_ITENS.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "ITENS"
+  },
+  {
+    "Atributo": "URL",
+    "Tipo": "CLOB",
+    "Descricao": "URL ou caminho do arquivo da imagem.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  }
+]

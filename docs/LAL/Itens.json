@@ -1,0 +1,30 @@
+[
+  {
+    "Atributo": "COD_ITEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único do item.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "NOME_ITEM",
+    "Tipo": "VARCHAR(500)",
+    "Descricao": "Nome do item.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DESCRICAO",
+    "Tipo": "CLOB",
+    "Descricao": "Descrição detalhada do item.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "CATEGORIA",
+    "Tipo": "NUMBER(2)",
+    "Descricao": "Categoria do item (ex: Imovel, Automovel).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  }
+]

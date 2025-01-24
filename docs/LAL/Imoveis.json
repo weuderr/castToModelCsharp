@@ -1,0 +1,45 @@
+[
+  {
+    "Atributo": "COD_IMOVEL",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único do imóvel.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "COD_ITEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Referência ao item na tabela ACESITA_LAL_ITENS.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "ITENS"
+  },
+  {
+    "Atributo": "ENDERECO",
+    "Tipo": "VARCHAR2(500)",
+    "Descricao": "Endereço do imóvel.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "AREA",
+    "Tipo": "NUMBER(10,2)",
+    "Descricao": "Área total do imóvel (m²).",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "NUMERO_QUARTOS",
+    "Tipo": "NUMBER(2)",
+    "Descricao": "Número de quartos.",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  },
+  {
+    "Atributo": "NUMERO_BANHEIROS",
+    "Tipo": "NUMBER(2)",
+    "Descricao": "Número de banheiros.",
+    "Obrigatoriedade": "não",
+    "Observacoes": ""
+  }
+]

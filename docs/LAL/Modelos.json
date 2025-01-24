@@ -1,0 +1,52 @@
+[
+  {
+    "Atributo": "COD_MODELO",
+    "Tipo": "NUMBER",
+    "Descricao": "Identificador único do modelo.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "PRIMARY KEY, AUTO_INCREMENT"
+  },
+  {
+    "Atributo": "COD_MARCA",
+    "Tipo": "NUMBER",
+    "Descricao": "Chave estrangeira para a tabela ACESITA_LAL.MARCAS.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "MARCAS"
+  },
+  {
+    "Atributo": "NOME_MODELO",
+    "Tipo": "VARCHAR2(500)",
+    "Descricao": "Nome do modelo (ex: Corolla, Civic).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "TIPO_VEICULO",
+    "Tipo": "VARCHAR2(50)",
+    "Descricao": "Tipo do veículo (ex: Automóvel, Moto).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DTH_CRIACAO",
+    "Tipo": "DATE",
+    "Descricao": "Data em que o registro foi criado.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "DTH_ATUALIZACAO",
+    "Tipo": "DATE",
+    "Descricao": "Data da última atualização do registro.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  },
+  {
+    "Atributo": "NUM_IDENT_USUAR",
+    "Tipo": "NUMBER(10)",
+    "Descricao": "Usuário de alteração/criação.",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "NOT NULL"
+  }
+]

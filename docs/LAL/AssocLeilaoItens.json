@@ -1,0 +1,18 @@
+[
+  {
+    "Atributo": "COD_LEILAO",
+    "Tipo": "NUMBER",
+    "Descricao": "Referência ao leilão (ACESITA_LAL.LEILOES_DETALHES).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "LEILOES_DETALHES"
+  },
+  {
+    "Atributo": "COD_ITEM",
+    "Tipo": "NUMBER",
+    "Descricao": "Referência ao item (ACESITA_LAL.ITENS).",
+    "Obrigatoriedade": "sim",
+    "Observacoes": "FOREIGN KEY",
+    "Tabela": "ITENS"
+  }
+]
